@@ -19,7 +19,7 @@ public with sharing class SampleDataController {
         ];
         String brokersJSON = brokersResource.body.toString();
         List<Broker__c> brokers = (List<Broker__c>) JSON.deserialize(
-            brokersJSON,
+            brokersResource.body.toString(),
             List<Broker__c>.class
         );
         insert brokers;
